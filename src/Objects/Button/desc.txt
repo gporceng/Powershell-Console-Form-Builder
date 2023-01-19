@@ -1,0 +1,1 @@
+Button: Represents a Windows button control. This is used to create buttons that can be clicked by the user to perform an action.
