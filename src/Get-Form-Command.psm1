@@ -15,7 +15,7 @@ function Get-Form-Command {
     $Version = "0.0.0"
     $Title = "Get-Form-Command ---Version $Version"
     $LineBr = "------------------------------------------------------"
-    
+    $PathToFiles = "C:\Users\gregp\Life\Sandbox\Powershell_Projects\switchblade\Powershell_Console_Form_Builder\src\"
     
     #Running the Form Snip that has been specified in the -Run parameter     
     if ($Run) {   
@@ -28,10 +28,10 @@ function Get-Form-Command {
         Write-Output "RUNNING EXAMPLE: " + $Run | Out-Default
 
         #Execute Form Snip
-        $Path = 'Objects\' + $Run + "\" + $Run + ".ps1"
+        $Path = $PathToFiles + 'Objects\' + $Run + "\" + $Run + ".ps1"
         & $Path
         Write-Output $Run | Out-Default
-
+        Write-Output $Path | Out-Default
         Write-Output "`n" | Out-Default
         Write-Output $LineBr | Out-Default
         Write-Output "`n" | Out-Default
@@ -51,7 +51,7 @@ function Get-Form-Command {
         Get-Content $Path | Write-Output | Out-Default
 
         #Display Description of Form Snip
-        $Path = 'Objects\' + $Example + "\desc.txt"
+        $Path = $PathToFiles + 'Objects\' + $Example + "\desc.txt"
         Get-Content $Path | Write-Output | Out-Default
 
         Write-Output "`n" | Out-Default
@@ -62,13 +62,13 @@ function Get-Form-Command {
 
     #Displays the description for the Form Snip that has been specified in the -Desc parameter
     if ($Desc) {
-        $Path = 'Objects\' + $Desc + "\desc.txt"
+        $Path = $PathToFiles + 'Objects\' + $Desc + "\desc.txt"
         Get-Content $Path | Write-Output | Out-Default
     }
 
 
     if ($Copy) {
-        $Path = 'Objects\' + $Copy + "\" + $Copy + ".ps1"
+        $Path = $PathToFiles + 'Objects\' + $Copy + "\" + $Copy + ".ps1"
         Get-Content $Path | Set-Clipboard
     }
 }
