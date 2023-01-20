@@ -55,8 +55,14 @@ $button.Height = 25
 $button.Location = New-Object System.Drawing.Point(150, 500)
 
 $button.Add_Click({
-    # Add code here to handle the button click event
-    # For example, you can use the text in the textboxes to create a form snip
+
+    #Create new path for snip and add desc and code files
+    $Path = ".\Objects\" + $textboxOne.Text
+    mkdir $Path
+    $OutputFile = ".\Objects\"+$textboxOne.Text+"\"+$textboxOne.Text+".ps1"
+    $textboxThree.Text > $OutputFile
+    $OutputFile = ".\Objects\"+$textboxOne.Text+"\desc.txt"
+    $textboxTwo.Text > $OutputFile
     Write-Output $textboxThree.Text | Out-Default
 })
 
