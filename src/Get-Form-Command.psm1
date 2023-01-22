@@ -82,3 +82,10 @@ Get-FormCommand -Copy 'Objects\Button\Button.ps1'
 #Get-Form-Command -Example "Button"
 #Get-Form-Command -Run "Button"
 Get-Form-Command -Copy "Button"
+
+
+<#
+Need to add the funcitonality that would allow the file paths to be referenced once the module is installed.
+
+This could be setup by the end user itself...ideally it'd be nice to run immedietly after the module has been installed.
+#>
