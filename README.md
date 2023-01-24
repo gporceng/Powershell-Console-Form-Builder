@@ -6,18 +6,18 @@ Powershell-Console-Form-Builder (PCFB) is a PowerShell module that allows for th
 
 The module provides the following commands:
 
-- `Get-FormCommand -Run <form_snip>`: Runs the example of the specified form snippet.
-- `Get-FormCommand -Example <form_snip>`: Displays the example of the specified form snippet in the console.
-- `Get-FormCommand -Copy <form_snip>`: Copies the example of the specified form snippet to the clipboard.
-- `Get-FormCommand -Description <form_snip>`: Displays the description of the specified form snippet in the console.
+- `Get-Form-Command -Run <form_snip>`: Runs the example of the specified form snippet.
+- `Get-Form-Command -Example <form_snip>`: Displays the example of the specified form snippet in the console.
+- `Get-Form-Command -Copy <form_snip>`: Copies the example of the specified form snippet to the clipboard.
+- `Get-Form-Command -Description <form_snip>`: Displays the description of the specified form snippet in the console.
 
 `<form_snip>` should be the path to the form snippet file, for example:
 
 ```powershell
-Get-FormCommand -Run 'Button'
-Get-FormCommand -Example 'Button'
-Get-FormCommand -Copy 'Button'
-Get-FormCommand -Description 'Button'
+Get-Form-Command -Run 'Button'
+Get-Form-Command -Example 'Button'
+Get-Form-Command -Copy 'Button'
+Get-Form-Command -Description 'Button'
 ```
 
 ## Examples
