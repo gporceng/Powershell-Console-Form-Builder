@@ -7,7 +7,11 @@ function Get-Form-Command {
         [Parameter(Mandatory=$false)]
         [string]$Copy,
         [Parameter(Mandatory=$false)]
-        [string]$Desc
+        [string]$Desc,
+        [Parameter(Mandatory=$false)]
+        [string]$Like,
+        [Parameter(Mandatory=$false)]
+        [switch]$All
     )
 
 
@@ -67,10 +71,21 @@ function Get-Form-Command {
     }
 
 
+    #Pulls the specified snipped into the clipboard
     if ($Copy) {
         $Path = $PathToFiles + 'Objects\' + $Copy + "\" + $Copy + ".ps1"
         Get-Content $Path | Set-Clipboard
     }
+
+    if ($Like) {
+        Get-ChildItem ./Objects *$Like* | Select Name
+    }
+
+    if ($All) {
+        Get-ChildItem ./Objects | Select Name
+    }
+
+
 }
 
 <#
@@ -81,8 +96,9 @@ Get-FormCommand -Copy 'Objects\Button\Button.ps1'
 
 #Get-Form-Command -Example "Button"
 #Get-Form-Command -Run "Button"
-Get-Form-Command -Copy "Button"
+#Get-Form-Command -Copy "Button"
 
+Get-Form-Command -Like "Lab"
 
 <#
 Need to add the funcitonality that would allow the file paths to be referenced once the module is installed.
